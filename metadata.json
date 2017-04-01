@@ -1,0 +1,15 @@
+{
+  "name": "ra-testing",
+  "version": "0.1.0",
+  "author": "ra",
+  "summary": "Testing",
+  "license": "Apache-2.0",
+  "source": "testing.git",
+  "project_page": "puppet",
+  "issues_url": "testing.git",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
