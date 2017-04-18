@@ -1,0 +1,24 @@
+---
+classes:
+  - qumucloud::legacy::user
+  - qumucloud::nfs
+  - qumucloud::hornetq
+  - qumucloud::converter::video
+qumucloud::hornetq::version: '2.4.5.Final-10.el6'
+qumucloud::hornetq::data_dir: '/data/message-broker/'
+qumucloud::hornetq::live_host: 'ra-wow-dal10-t01'
+qumucloud::hornetq::backup_host: 'ra-wow-dal10-t02'
+qumucloud::hornetq::enable_jolokia: false
+qumucloud::hornetq::manage_service: false
+qumucloud::hornetq::uid: 501
+
+qumucloud::converter::video::version: '2.0.0-1.20170127git4b2ceb7.el6'
+qumucloud::converter::video::use_version_2: true
+qumucloud::converter:::video::data_dir: '/data/jobs'
+qumucloud::converter::video::properties:
+  liveHost: 'ra-wow-dal10-t01'
+  backupHost: 'ra-wow-dal10-t02'
+  numberOfParallelJobs: '4'
+qumucloud::converter::video::sentry_tags:
+  service: '%{::service}'
+  role: '%{::role}'
